@@ -1,0 +1,24 @@
+<script src='mohit.js'></script>
+<script>
+
+function f()
+{
+var x=document.getElementById("input").value;
+var y=document.getElementById("code").value;
+$.ajax({
+  type: "GET",
+  url: "c_app.php",
+  data: {input:x,code:y}
+})
+  .done(function( msg ) {
+    document.getElementById("output").innerHTML=msg;
+  });
+  }
+  </script>
+Question code <input type='number' id='code'></input>
+Input<br>
+<textarea id="input" rows=15 cols=100>
+</textarea>
+<input type='button' onclick='f()' value='Submit'></input>
+<br>Output<br>
+<textarea id='output' rows=15 cols=100></textarea>

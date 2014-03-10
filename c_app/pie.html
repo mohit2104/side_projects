@@ -1,0 +1,24 @@
+<script src='mohit.js'></script>
+<script>
+
+function f()
+{
+var x=document.getElementById("input").value;
+
+$.ajax({
+  type: "GET",
+  url: "pie.php",
+  data: {input:x}
+})
+  .done(function( msg ) {
+    document.getElementById("output").innerHTML=msg;
+  });
+  }
+  </script>
+
+Input<br>
+<textarea id="input" rows=15 cols=100>
+</textarea>
+<input type='button' onclick='f()' value='Submit'></input>
+<br>Output<br>
+<textarea id='output' rows=15 cols=100></textarea>
